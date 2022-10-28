@@ -11,6 +11,7 @@ html {
 }
 body {
 	font-family: 'Roboto', sans-serif;
+	height: 100vh;
 }
 
 .wrapper {
@@ -18,17 +19,26 @@ body {
 	width: 100%;
 	max-width: 1200px;
 }
-.shadow{
-	position: relative;
-	background-color: rgba(0,0,0,.6);
-	z-index:2;
+.shadow-bg {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 500;
 }
-.ul-list{
+.ul-list {
 	list-style: none;
 	color: $gray-color;
 }
+.main {
+	height: 50vh;
+}
 .header {
 	position: relative;
+	height: 50vh;
 	&__img {
 		position: relative;
 		width: 100%;
@@ -39,6 +49,9 @@ body {
 		background-position: center;
 		z-index: -1;
 	}
+}
+.nav-desktop {
+	display: none;
 }
 .nav {
 	position: relative;
@@ -51,7 +64,7 @@ body {
 		right: 5%;
 		z-index: 9999;
 		cursor: pointer;
-		&--close{
+		&--close {
 			display: none;
 		}
 	}
@@ -63,22 +76,19 @@ body {
 		flex-direction: column;
 		align-items: center;
 		height: 100vh;
-		width: 60%;
+		width: 225px;
 		background-color: $white-color;
+		z-index: 1000;
 		&-list {
 			align-self: flex-start;
-			margin: 4em 0 2em 1em;
+			margin: 4em 0 0 1em;
 			font-size: 2rem;
-			a{
+			a {
 				text-decoration: none;
 				color: $gray-color;
 			}
 			&-item {
 				padding-bottom: 1em;
-			}
-			&-item:nth-child(1) {
-				display: flex;
-				align-items: center;
 			}
 			&-icon {
 				margin-left: 0.3em;
@@ -88,29 +98,64 @@ body {
 			width: 80%;
 			padding: 0.5em 1em;
 			background: transparent;
-			border: 2px solid transparent;
 			border-radius: 20px;
 			font-size: 2rem;
+			border: 2px solid transparent;
 			color: $gray-color;
-			transition: border .3s;
+			transition: border 0.3s;
 			cursor: pointer;
 			&:hover {
 				border: 2px solid $gray-color;
 			}
+			&--register {
+				margin-top: 0.5em;
+				border: 2px solid $gray-color;
+			}
 		}
 	}
-	&__second-menu{
+	&__second-menu {
+		display: none;
 		margin-top: 1em;
-		
+		margin-left: 1em;
+		&-item {
+			display: flex;
+			align-items: center;
+			margin-bottom: 1em;
+			opacity: 0;
+			cursor: pointer;
+			img {
+				padding-right: 0.5em;
+				width: 30px;
+				height: 20px;
+			}
+		}
+	}
+	&__company {
+		display: none;
+		margin-top: 1em;
+		margin-left: 1em;
+		&-item {
+			margin-bottom: 1em;
+			cursor: pointer;
+			opacity: 0;
+		}
 	}
 }
-.hide-nav-btn{
+@keyframes showMenu {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+.hide-nav-btn {
 	display: none;
 }
-.show-close-btn{
+.show-close-btn {
 	display: block;
 }
-.show-nav{
+.show-nav {
 	right: 0;
 }
 .box {
@@ -121,7 +166,7 @@ body {
 	&__header {
 		color: $black-color;
 		padding: 0.5em 0;
-		font-size: 4.5rem;
+		font-size: 4rem;
 	}
 	&__text {
 		padding: 0.5em;
@@ -163,6 +208,111 @@ body {
 		&-img:nth-child(4) {
 			width: 74px;
 			height: 2rem;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	body {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 100px 1fr;
+		gap: 50px;
+		width: 100%;
+		height: 100vh;
+	}
+	.header{
+		position: relative;
+		display: grid;
+		grid-column: 2/3;
+		grid-row: 2/3;
+		height: 70vh;
+		&__img{
+			background-image: url('../images/image-hero-desktop.png');
+			height: 80%;
+		}
+	}
+	.main{
+		grid-column: 1/2;
+		grid-row: 2/3;
+		height: 70vh;
+		margin-top: 8em;
+	}
+	.nav {
+		display: none;
+		height: 20vh;
+	}
+	.nav-desktop {
+		grid-row: 1/2;
+		grid-column: 1/3;
+		display: flex;
+		align-items: center;
+		column-gap: 3em;
+		width: 100%;
+		padding: 2em 2em;
+		&__menu {
+			display: flex;
+			list-style: none;
+			&-item {
+				&-link {
+					display: flex;
+					align-items: center;
+					padding-right: 1em;
+					font-size: 1.6rem;
+					text-decoration: none;
+					color: $gray-color;
+					img {
+						margin-left: 0.5em;
+					}
+				}
+			}
+		}
+		&__box {
+			margin-left: 3em;
+			&-btn {
+				padding: 0.5em 1em;
+				background: transparent;
+				border-radius: 20px;
+				font-size: 2rem;
+				border: 2px solid transparent;
+				color: $gray-color;
+				transition: border 0.3s;
+				cursor: pointer;
+				&:hover {
+					border: 2px solid $gray-color;
+				}
+				&--register {
+					border: 2px solid $gray-color;
+				}
+			}
+		}
+	}
+	.icons {
+		margin-top: 15em;
+		&__box {
+			&-img:nth-child(1) {
+				width: 104px;
+				height: 3rem;
+			}
+			&-img:nth-child(2) {
+				width: 70px;
+				height: 4rem;
+			}
+			&-img:nth-child(3) {
+				width: 94px;
+				height: 2.8rem;
+			}
+			&-img:nth-child(4) {
+				width: 94px;
+				height: 3rem;
+			}
+		}
+	}
+}
+@media(min-width:996px){
+	.box{
+		&__header{
+			font-size: 6rem;
 		}
 	}
 }

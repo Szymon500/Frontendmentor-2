@@ -19,6 +19,29 @@
 </head>
 
 <body>
+  <nav class="nav-desktop">
+    <img src="images/logo.svg" alt="Logo firmy snap" class="nav-desktop-logo">
+    <ul class="nav-desktop__menu">
+      <li class="nav-desktop__menu-item">
+        <a href="#" class="nav-desktop__menu-item-link">
+          Features
+          <img class="nav-dekstop__menu-item-img" src="images/icon-arrow-down.svg" alt="">
+        </a>
+      </li>
+      <li class="nav-desktop__menu-item">
+        <a href="#" class="nav-desktop__menu-item-link">
+          Company
+          <img class="nav-dekstop__menu-item-img" src="images/icon-arrow-down.svg" alt="">
+        </a>
+      </li>
+      <li class="nav-desktop__menu-item"><a href="#" class="nav-desktop__menu-item-link">Career</a></li>
+      <li class="nav-desktop__menu-item"><a href="#" class="nav-desktop__menu-item-link">About</a></li>
+    </ul>
+    <div class="nav-desktop__box">
+      <button class="nav-desktop__box-btn">Login</button>
+      <button class="nav-desktop__box-btn nav-desktop__box-btn--register ">Register</button>
+    </div>
+  </nav>
   <header class="header">
     <nav class="nav">
       <img src="images/logo.svg" alt="Logo firmy snap" class="nav__logo">
@@ -27,31 +50,33 @@
       <div class="nav__mobile">
         <ul class="nav__mobile-list ul-list">
           <li class="nav__mobile-list-item">
-            <a href="#">Features <img class="nav__mobile-list-icon"
-              src="images/icon-arrow-down.svg" alt=""></a>
-            <ul class="nav__second-menu ul-list">
-              <li><img src="images/icon-todo.svg" alt="">Todo List</li>
-              <li><img src="images/icon-calendar.svg" alt="">Calendar</li>
-              <li><img src="images/icon-reminders.svg" alt="">Reminders</li>
-              <li><img src="images/icon-planning.svg" alt="">Planing</li>
+            <a href="#" class="nav-shows">Features <img class="nav__mobile-list-icon" src="images/icon-arrow-down.svg"
+                alt=""></a>
+            <ul class="nav__second-menu ul-list menu-2">
+              <li class="nav__second-menu-item"><img src="images/icon-todo.svg" alt="">Todo List</li>
+              <li class="nav__second-menu-item"><img src="images/icon-calendar.svg" alt="">Calendar</li>
+              <li class="nav__second-menu-item"><img src="images/icon-reminders.svg" alt="">Reminders</li>
+              <li class="nav__second-menu-item"><img src="images/icon-planning.svg" alt="">Planing</li>
             </ul>
           </li>
           <li class="nav__mobile-list-item">
-            <a href="#">Company <img class="nav__mobile-list-icon"
-              src="images/icon-arrow-down.svg" alt=""></a>
-             <ul class="nav__company ul-list">
-              <li>History</li>
-              <li>Our Team</li>
-              <li>Blog</li>
-             </ul>
-            </li>
+            <a href="#" class="nav-show-2">Company <img class="nav__mobile-list-icon" src="images/icon-arrow-down.svg"
+                alt=""></a>
+            <ul class="nav__company ul-list menu-3">
+              <li class="nav__company-item">History</li>
+              <li class="nav__company-item">Our Team</li>
+              <li class="nav__company-item">Blog</li>
+            </ul>
+          </li>
           <li class="nav__mobile-list-item">
-            <a href="#">Career</a></li>
+            <a href="#">Career</a>
+          </li>
           <li class="nav__mobile-list-item">
-            <a href="#">About</a></li>
+            <a href="#">About</a>
+          </li>
         </ul>
-        <button class="nav__mobile-btn login">Login</button>
-        <button class="nav__mobile-btn register">Register</button>
+        <button class="nav__mobile-btn ">Login</button>
+        <button class="nav__mobile-btn nav__mobile-btn--register ">Register</button>
       </div>
     </nav>
     <div class="header__img"></div>
@@ -77,6 +102,7 @@
         </div>
       </div>
     </section>
+    <div class="shadow-bg"></div>
   </main>
   <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
