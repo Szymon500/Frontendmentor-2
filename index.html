@@ -19,29 +19,33 @@
 </head>
 
 <body>
-  <nav class="nav-desktop">
-    <img src="images/logo.svg" alt="Logo firmy snap" class="nav-desktop-logo">
-    <ul class="nav-desktop__menu">
-      <li class="nav-desktop__menu-item">
-        <a href="#" class="nav-desktop__menu-item-link">
-          Features
-          <img class="nav-dekstop__menu-item-img" src="images/icon-arrow-down.svg" alt="">
-        </a>
-      </li>
-      <li class="nav-desktop__menu-item">
-        <a href="#" class="nav-desktop__menu-item-link">
-          Company
-          <img class="nav-dekstop__menu-item-img" src="images/icon-arrow-down.svg" alt="">
-        </a>
-      </li>
-      <li class="nav-desktop__menu-item"><a href="#" class="nav-desktop__menu-item-link">Career</a></li>
-      <li class="nav-desktop__menu-item"><a href="#" class="nav-desktop__menu-item-link">About</a></li>
-    </ul>
-    <div class="nav-desktop__box">
-      <button class="nav-desktop__box-btn">Login</button>
-      <button class="nav-desktop__box-btn nav-desktop__box-btn--register ">Register</button>
-    </div>
-  </nav>
+  <div class="wrapper">
+    <nav class="nav-desktop">
+      <div class="nav-desktop-box">
+        <img src="images/logo.svg" alt="Logo firmy snap" class="nav-desktop-logo">
+      </div>
+      <ul class="nav-desktop__menu">
+        <li class="nav-desktop__menu-item">
+          <a href="#" class="nav-desktop__menu-item-link">
+            Features
+            <img class="nav-dekstop__menu-item-img" src="images/icon-arrow-down.svg" alt="">
+          </a>
+        </li>
+        <li class="nav-desktop__menu-item">
+          <a href="#" class="nav-desktop__menu-item-link">
+            Company
+            <img class="nav-dekstop__menu-item-img" src="images/icon-arrow-down.svg" alt="">
+          </a>
+        </li>
+        <li class="nav-desktop__menu-item"><a href="#" class="nav-desktop__menu-item-link">Career</a></li>
+        <li class="nav-desktop__menu-item"><a href="#" class="nav-desktop__menu-item-link">About</a></li>
+      </ul>
+      <div class="nav-desktop__box">
+        <button class="nav-desktop__box-btn">Login</button>
+        <button class="nav-desktop__box-btn nav-desktop__box-btn--register ">Register</button>
+      </div>
+    </nav>
+  </div>
   <header class="header">
     <nav class="nav">
       <img src="images/logo.svg" alt="Logo firmy snap" class="nav__logo">
@@ -79,30 +83,34 @@
         <button class="nav__mobile-btn nav__mobile-btn--register ">Register</button>
       </div>
     </nav>
-    <div class="header__img"></div>
+
   </header>
   <main class="main">
-    <section class="title">
-      <div class="wrapper">
+    <div class="wrapper">
+      <section class="foto">
+        <img src="images/image-hero-mobile.png" alt="Men holding laptop in hands and writing on him" class="foto__img">
+      </section>
+      <section class="title">
         <div class="box">
           <h1 class="box__header">Make remote work</h1>
           <p class="box__text">Get your team in sync, no matter your<br> location. Streamline processes,
             create<br> team rituals, and watch productivity soar.</p>
           <button class="box__button">Learn more</button>
         </div>
-      </div>
-    </section>
-    <section class="icons">
-      <div class="wrapper">
+
+      </section>
+      <section class="icons">
+
         <div class="icons__box">
           <img class="icons__box-img" src="images/client-databiz.svg" alt="Logo databiz">
           <img class="icons__box-img" src="images/client-audiophile.svg" alt="Logo audiophile">
           <img class="icons__box-img" src="images/client-meet.svg" alt="Logo meet">
           <img class="icons__box-img" src="images/client-maker.svg" alt="Logo maker">
         </div>
-      </div>
-    </section>
-    <div class="shadow-bg"></div>
+
+      </section>
+      <div class="shadow-bg"></div>
+    </div>
   </main>
   <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
