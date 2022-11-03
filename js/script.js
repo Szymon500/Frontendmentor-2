@@ -9,8 +9,12 @@ const menuCompany =document.querySelector('.nav__company')
 const menuCompanyLinks = menuCompany.querySelectorAll('li')
 const menuCompanyBtn = document.querySelector('.nav-show-2')
 const bgShadow = document.querySelector('.shadow-bg')
-
-
+const arrowsDesktop = document.querySelectorAll('.nav-dekstop__menu-item-img')
+const fotoDesktop  = document.querySelector('.foto__img')
+const link1 = document.querySelector('.click-class1')
+const link2 = document.querySelector('.click-class2')
+const menuDesktop1 = document.querySelector('.menu-4')
+const menuDesktop2 = document.querySelector('.menu-5')
 
 
 const navBtnHandle = () => {
@@ -54,8 +58,42 @@ const showMenuCompany = () => {
 		}
 	}
 }
+const changeImg = () =>{
+	if(window.innerWidth>995){
+		fotoDesktop.setAttribute('src','images/image-hero-desktop.png')
+	}else{
+		fotoDesktop.setAttribute('src','images/image-hero-mobile.png')
+	}
+}
+const showMenuDesktop =() =>{
+	if(menuDesktop1.classList.contains('hide')){
+		menuDesktop1.classList.add('show')
+		menuDesktop1.classList.remove('hide')
+		link1.lastElementChild.setAttribute('src','images/icon-arrow-up-desktop.svg')
+	}else{
+		menuDesktop1.classList.remove('show')
+		menuDesktop1.classList.add('hide')
+		link1.lastElementChild.setAttribute('src','images/icon-arrow-down-desktop.svg')
+	}
+}
+const showMenuDesktop2 =() =>{
+	if(menuDesktop2.classList.contains('hide')){
+		menuDesktop2.classList.add('show')
+		menuDesktop2.classList.remove('hide')
+		link2.lastElementChild.setAttribute('src','images/icon-arrow-up-desktop.svg')
+	}else{
+		menuDesktop2.classList.remove('show')
+		menuDesktop2.classList.add('hide')
+		link2.lastElementChild.setAttribute('src','images/icon-arrow-down-desktop.svg')
+	}
+}
 
+link1.addEventListener('click',showMenuDesktop)
+link2.addEventListener('click',showMenuDesktop2)
+window.addEventListener('load',changeImg)
+window.addEventListener('resize',changeImg)
 navBtn.addEventListener('click', navBtnHandle)
 navClose.addEventListener('click', navCloseHandle)
 secondNavBtn.addEventListener('click', showFirstMenu)
 menuCompanyBtn.addEventListener('click', showMenuCompany)
+
